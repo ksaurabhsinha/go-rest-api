@@ -1,37 +1,146 @@
-## Welcome to GitHub Pages
+## Simple REST API in GoLang
 
-You can use the [editor on GitHub](https://github.com/ksaurabhsinha/go-rest-api/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a simple REST API in GoLang. This is just for educational purpose.
+I do not use any database and everything is saved in a slice.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Endpoints
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+#### List All People
+**Request**
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+/people - GET
+```
+**Response**
+```markdown
+[
+    {
+        "id": "1",
+        "first_name": "User 1 First Name",
+        "last_name": "User 1 Last Name",
+        "address": {
+            "city": "City 1",
+            "state": "State 1"
+        }
+    },
+    {
+        "id": "2",
+        "first_name": "User 2 First Name",
+        "last_name": "User 2 Last Name",
+        "address": {
+            "city": "City 2",
+            "state": "State 2"
+        }
+    },
+    {
+        "id": "3",
+        "first_name": "User 3 First Name",
+        "last_name": "User 3 Last Name"
+    }
+]
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Get single person by Id
+**Request**
+```markdown
+/people/{id} - GET
+```
+**Response**
+```markdown
+{
+    "id": "1",
+    "first_name": "User 1 First Name",
+    "last_name": "User 1 Last Name",
+    "address": {
+        "city": "City 1",
+        "state": "State 1"
+    }
+}
+```
 
-### Jekyll Themes
+#### Add New Person
+**Request**
+```markdown
+/people/{id} - POST
+```
+**Payload**
+```markdown
+{
+    "first_name": "User 4 First Name",
+    "last_name": "User 4 Last Name",
+    "address": {
+        "city": "City 4",
+        "state": "State 4"
+    }
+}
+```
+**Response**
+```markdown
+[
+    {
+        "id": "1",
+        "first_name": "User 1 First Name",
+        "last_name": "User 1 Last Name",
+        "address": {
+            "city": "City 1",
+            "state": "State 1"
+        }
+    },
+    {
+        "id": "2",
+        "first_name": "User 2 First Name",
+        "last_name": "User 2 Last Name",
+        "address": {
+            "city": "City 2",
+            "state": "State 2"
+        }
+    },
+    {
+        "id": "3",
+        "first_name": "User 3 First Name",
+        "last_name": "User 3 Last Name"
+    },
+    {
+        "id": "4",
+        "first_name": "User 4 First Name",
+        "last_name": "User 4 Last Name",
+        "address": {
+            "city": "City 4",
+            "state": "State 4"
+        }
+    }
+]
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ksaurabhsinha/go-rest-api/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### Delete a Person
+**Request**
+```markdown
+/people/{id} - DELETE
+```
+**Response**
+```markdown
+[
+    {
+        "id": "1",
+        "first_name": "User 1 First Name",
+        "last_name": "User 1 Last Name",
+        "address": {
+            "city": "City 1",
+            "state": "State 1"
+        }
+    },
+    {
+        "id": "2",
+        "first_name": "User 2 First Name",
+        "last_name": "User 2 Last Name",
+        "address": {
+            "city": "City 2",
+            "state": "State 2"
+        }
+    },
+    {
+        "id": "3",
+        "first_name": "User 3 First Name",
+        "last_name": "User 3 Last Name"
+    }
+]
+```
