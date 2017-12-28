@@ -6,6 +6,7 @@ I do not use any database and everything is saved in a slice.
 ### Endpoints
 
 #### List All People
+***
 **Request**
 ```markdown
 /people - GET
@@ -40,6 +41,7 @@ I do not use any database and everything is saved in a slice.
 ```
 
 #### Get single person by Id
+***
 **Request**
 ```markdown
 /people/{id} - GET
@@ -58,6 +60,7 @@ I do not use any database and everything is saved in a slice.
 ```
 
 #### Add New Person
+***
 **Request**
 ```markdown
 /people/{id} - POST
@@ -112,6 +115,7 @@ I do not use any database and everything is saved in a slice.
 ```
 
 #### Delete a Person
+***
 **Request**
 ```markdown
 /people/{id} - DELETE
